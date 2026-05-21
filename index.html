@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Predictor Email Campaign</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="dashboard">
+    <!-- Left Sidebar -->
+    <aside class="left-sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="logo-text">
+                <h2>RESULTS<span style="font-weight:300;">PREDICTOR</span></h2>
+                <p>EMAIL CAMPAIGN</p>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <select id="language" style="font-weight: 500;"><option value="en">🇺🇸 English</option></select>
+        </div>
+        <div class="control-group">
+            <label>Time Unit</label>
+            <select id="timeUnit"><option value="Week">Week</option></select>
+        </div>
+        <div class="control-group">
+            <label>Number of Periods</label>
+            <div class="number-input">
+                <input type="number" id="numPeriods" value="12" min="1" max="52">
+            </div>
+        </div>
+        <div class="control-group">
+            <label>Currency</label>
+            <select id="currency"><option value="USD">$ USD</option></select>
+        </div>
+
+        <div class="info-box">
+            <h3 style="margin-bottom:10px;">Would you like to leverage a widget like this one in your campaigns?</h3>
+            <p style="margin-bottom:10px;">Widget like this are always valued by customers.</p>
+            <p style="margin-bottom:10px;">They are a great way to stimulate engagement and get more people to talk about your products.</p>
+            <p style="margin-bottom:10px;">It's also a great way to generate leads.</p>
+            <a href="#">Click here to learn more about how to get one.</a>
+        </div>
+        <div class="footer-links">
+            <p>Logo: Designed by <strong>Freepik</strong></p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Chart Section -->
+        <section class="chart-section" style="padding: 0;">
+            <div class="chart-header">
+                <h3 style="color:#1f3b6c; font-weight:700;">Metrics Over Time</h3>
+                <div class="chart-legend">
+                    <span class="legend-item"><span class="dot green"></span> Profit</span>
+                    <span class="legend-item"><span class="dot blue"></span> Customers</span>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="metricsChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Revenue Section -->
+        <h3 class="section-title revenue-section" style="margin-top: 20px; margin-bottom: -5px;">Revenue</h3>
+        <section class="sliders-grid">
+            <div class="slider-card">
+                <div class="slider-header">
+                    <label>Launching Customers <i class="fa-regular fa-circle-question"></i></label>
+                    <input type="number" id="val-launchingCustomers" value="119">
+                </div>
+                <input type="range" id="launchingCustomers" min="0" max="1000" value="119" step="1">
+                <div class="slider-labels"><span>0</span><span>1000</span></div>
+            </div>
+            <div class="slider-card">
+                <div class="slider-header">
+                    <label>Revenue Per Conversion <i class="fa-regular fa-circle-question"></i></label>
+                    <input type="number" id="val-revenuePerConversion" value="64.8" step="0.1">
+                </div>
+                <input type="range" id="revenuePerConversion" min="0" max="1000" value="64.8" step="0.1">
+                <div class="slider-labels"><span>0</span><span>1000</span></div>
+            </div>
+            <div class="slider-card">
+                <div class="slider-header">
+                    <label>Customer Growth Rate <i class="fa-regular fa-circle-question"></i></label>
+                    <input type="number" id="val-customerGrowthRate" value="0.15" step="0.01">
+                </div>
+                <input type="range" id="customerGrowthRate" min="0" max="1" value="0.15" step="0.01">
+                <div class="slider-labels"><span>0</span><span>1</span></div>
+            </div>
+            <div class="slider-card">
+                <div class="slider-header">
+                    <label>Average Response Rate <i class="fa-regular fa-circle-question"></i></label>
+                    <input type="number" id="val-averageResponseRate" value="0.2" step="0.01">
+                </div>
+                <input type="range" id="averageResponseRate" min="0" max="1" value="0.2" step="0.01">
+                <div class="slider-labels"><span>0</span><span>1</span></div>
+            </div>
+        </section>
+
+        <!-- Expenses Section -->
+        <h3 class="section-title expenses-section" style="margin-top: 10px; margin-bottom: -5px;">Expenses</h3>
+        <section class="sliders-grid">
+            <div class="slider-card">
+                <div class="slider-header">
+                    <label>Customer Churn Rate <i class="fa-regular fa-circle-question"></i></label>
+                    <input type="number" id="val-customerChurnRate" value="0.02" step="0.01">
+                </div>
+                <input type="range" id="customerChurnRate" min="0" max="1" value="0.02" step="0.01">
+                <div class="slider-labels"><span>0</span><span>1</span></div>
+            </div>
+            <div class="slider-card">
+                <div class="slider-header">
+                    <label>Variable Cost <i class="fa-regular fa-circle-question"></i></label>
+                    <input type="number" id="val-variableCost" value="10.8" step="0.1">
+                </div>
+                <input type="range" id="variableCost" min="0" max="1000" value="10.8" step="0.1">
+                <div class="slider-labels"><span>0</span><span>1000</span></div>
+            </div>
+            <div class="slider-card">
+                <div class="slider-header">
+                    <label>Fixed Costs <i class="fa-regular fa-circle-question"></i></label>
+                    <input type="number" id="val-fixedCosts" value="175">
+                </div>
+                <input type="range" id="fixedCosts" min="0" max="1000" value="175" step="1">
+                <div class="slider-labels"><span>0</span><span>1000</span></div>
+            </div>
+            <div class="slider-card">
+                <div class="slider-header">
+                    <label>Starting Cost <i class="fa-regular fa-circle-question"></i></label>
+                    <input type="number" id="val-startingCost" value="0">
+                </div>
+                <input type="range" id="startingCost" min="0" max="1000" value="0" step="1">
+                <div class="slider-labels"><span>0</span><span>1000</span></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="right-sidebar" style="background:#fff; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+        <div class="card summary-card" style="padding: 0;">
+            <h3>Campaign Summary</h3>
+            <p class="subtitle" id="profitabilityStatus" style="font-weight:500;">Profitable in week #1</p>
+            <hr>
+            <div class="summary-details">
+                <p><strong>At week #12:</strong></p>
+            <div class="stat-row"><span>Customers:</span> <strong id="out-customers">3052</strong></div>
+            <div class="stat-row"><span>Revenue:</span> <strong id="out-revenue" class="green-text">$39,558.73</strong></div>
+            <div class="stat-row"><span>Expenses:</span> <strong id="out-expenses" class="red-text">$8,693.12</strong></div>
+            </div>
+            
+            <div class="metric-box">
+                <p>Total Profit</p>
+                <h2 id="out-totalProfit"><strong>$30,865.61</strong></h2>
+            </div>
+            <div class="metric-box">
+                <p>Average Retention</p>
+                <h2 id="out-retention"><strong>50.00 weeks</strong></h2>
+            </div>
+            <div class="metric-box">
+                <p>Return on Investment</p>
+                <h2 id="out-roi"><strong>355.06%</strong></h2>
+            </div>
+        </div>
+
+        <div class="card action-card" style="margin-top:20px; border: 1px solid #e0e6ed; padding: 15px; border-radius: 4px;">
+            <div class="action-row">
+                <span style="font-weight:600;">Export Data</span>
+                <i class="fa-solid fa-download"></i>
+            </div>
+            <button class="btn btn-green"><i class="fa-solid fa-download"></i> Download CSV</button>
+        </div>
+
+        <div class="card action-card" style="margin-top:20px; border: 1px solid #e0e6ed; padding: 15px; border-radius: 4px;">
+            <div class="action-row">
+                <span style="font-weight:600;">Load Data</span>
+                <i class="fa-solid fa-upload"></i>
+            </div>
+            <button class="btn btn-blue"><i class="fa-solid fa-upload"></i> Load CSV</button>
+        </div>
+
+        <div class="card social-card" style="margin-top:20px; border: 1px solid #e0e6ed; padding: 15px; border-radius: 4px;">
+            <div class="action-row">
+                <span style="font-weight:600; color: #333;">Let's connect</span>
+                <i class="fa-solid fa-share-nodes"></i>
+            </div>
+            <div class="social-grid">
+                <button class="social-btn sb-fb" style="background:#1877f2;"><i class="fa-brands fa-facebook-f"></i></button>
+                <button class="social-btn sb-ig" style="background:linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);"><i class="fa-brands fa-instagram"></i></button>
+                <button class="social-btn sb-link" style="background:#333;"><i class="fa-solid fa-link"></i></button>
+                <button class="social-btn sb-tw" style="background:#1877f2;"><i class="fa-brands fa-facebook-f"></i></button>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
